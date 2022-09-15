@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                 future: getTodoList(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return const Text("Loading");
+                    return const CircularProgressIndicator();
                   } else {
                     return ListView.builder(
                         itemCount: todoList.length,
