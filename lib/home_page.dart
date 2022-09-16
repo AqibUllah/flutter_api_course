@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_interpolation_to_compose_strings
+// ignore_for_file: prefer_interpolation_to_compose_strings, prefer_const_constructors
 
 import 'dart:convert';
 import 'dart:ui';
@@ -47,7 +47,10 @@ class HomePage extends StatelessWidget {
                 future: getTodoList(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return const CircularProgressIndicator();
+                    return Center(
+                        child: const CircularProgressIndicator(
+                      strokeWidth: 2.0,
+                    ));
                   } else {
                     return ListView.builder(
                         itemCount: todoList.length,
